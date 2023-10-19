@@ -21,6 +21,7 @@ jobs:
       - uses: joshuaavalon/flyway-action@v3.0.0
         with:
           url: jdbc:postgresql://db01-dev.c4u0iygcr8b5.us-east-1.rds.amazonaws.com:5432/postgres
-          user: user
-          password: password
+          user: postgres
+          password: postgres
+          locations: filesystem:./sql
       - run: echo 'testing'
