@@ -5,11 +5,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: joshuaavalon/flyway-action@v3.0.0
-        with:
-          url: jdbc:postgresql://db01-dev.c4u0iygcr8b5.us-east-1.rds.amazonaws.com:5432/postgres
-          user: postgres
-          password: postgres
-          locations: filesystem:./
-      - run: echo 'testing'
+      - run: sudo apt update
