@@ -23,4 +23,6 @@ jobs:
           url: jdbc:postgresql://postgres:5432/postgres
           user: postgres
           password: postgres
+        env:
+          FLYWAY_VALIDATE_MIGRATION_NAMING: true
       - run: echo 'testing'
