@@ -7,3 +7,4 @@ jobs:
     steps:
       - run: sudo apt update
       - run: sudo apt install postgresql postgresql-contrib
+      - run: psql -h db01-dev.c4u0iygcr8b5.us-east-1.rds.amazonaws.com -p 5432 -d postgres -U postgres
