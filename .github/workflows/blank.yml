@@ -6,3 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt update
+      - run: apt install postgresql postgresql-contrib
