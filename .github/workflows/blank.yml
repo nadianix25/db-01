@@ -14,14 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "checkout this repo ${{ github.repository }}"
-      - run: >-
-          docker run --rm
-          --volume ${{ github.workspace }}/migrations:/flyway/sql:ro
-          "${{ env.DOCKER_IMAGE }}"
-          -url=db01-dev.c4u0iygcr8b5.us-east-1.rds.amazonaws.com
-          -user=postgres
-          -password=postgres
-          -cleanDisabled=false clean migrate -schemas=public
       - name: Flyway Info
         run: >-
           docker run --rm
