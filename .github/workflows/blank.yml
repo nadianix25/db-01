@@ -8,8 +8,8 @@ jobs:
     steps:
       - run: sudo apt update
       - run: sudo wget -qO- https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/9.22.3/flyway-commandline-9.22.3-linux-x64.tar.gz | tar -xvz && sudo ln -s `pwd`/flyway-9.22.3/flyway /usr/local/bin
-      - run: sudo flyway info 
       - run: flyway.driver=org.hsqldb.jdbcDriver
       - run: flyway.url=jdbc:hsqldb:file:/db/flyway_sample
       - run: flyway.user=SA
       - run: flyway.password=mySecretPwd
+      - run: sudo flyway info 
