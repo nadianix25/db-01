@@ -1,6 +1,8 @@
-name: Main
+name: feature check
 on:
-  - push
+ push:
+    branches:
+    - 'feature/**'
 jobs:
   test:
     runs-on: ubuntu-latest
