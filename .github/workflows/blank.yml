@@ -6,6 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: sudo apt update
       - run: sudo wget -qO- https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/9.22.3/flyway-commandline-9.22.3-linux-x64.tar.gz | tar -xvz && sudo ln -s `pwd`/flyway-9.22.3/flyway /usr/local/bin
       - run: flyway info -user=postgres -password=postgres -url="jdbc:postgresql://db01-dev.c4u0iygcr8b5.us-east-1.rds.amazonaws.com:5432/"
