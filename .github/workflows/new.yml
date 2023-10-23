@@ -9,3 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: sudo apt update
       - run: ifconfig
+      - run: ping google.com
