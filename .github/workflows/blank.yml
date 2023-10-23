@@ -1,28 +1,10 @@
-name: Main
+
+name: postgresql-flyway-migrations
 on:
   - push
 jobs:
   test:
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_DB: postgres
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
     steps:
-      - uses: actions/checkout@v2
-      - uses: joshuaavalon/flyway-action@v3.0.0
-        with:
-          url: jdbc:postgresql://postgres:5432/postgres
-          user: postgres
-          password: postgres
-        env:
-          FLYWAY_VALIDATE_MIGRATION_NAMING: true
-      - run: echo 'testing'
+      - run: sudo apt update
+      - run: sudo wget -qO- https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/9.22.3/flyway-commandline-9.22.3-linux-x64.tar.gz | tar -xvz && sudo ln -s `pwd`/flyway-9.22.3/flyway /usr/local/bin 
