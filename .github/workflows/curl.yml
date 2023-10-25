@@ -1,0 +1,10 @@
+name: feature check
+on:
+  push:
+    branches:
+    - 'staging'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl
