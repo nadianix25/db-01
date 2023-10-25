@@ -7,4 +7,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -I http://ec2-34-227-221-111.compute-1.amazonaws.com:8080/job/git%20test/build?token=1234 --user remotetriger:${{ secrets.JENKSTOKEN }}
+      - run: curl -I http://ec2-34-227-221-111.compute-1.amazonaws.com:8080/job/git%20test/build?token=1234 --user remotetriger:${{ secrets.JENKTOKEN }}
