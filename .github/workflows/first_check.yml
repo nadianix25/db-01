@@ -1,8 +1,11 @@
 name: feature check
 on:
- push:
+  push:
     branches:
     - 'feature/**'
+  pull_request:
+    branches:
+    - staging
 jobs:
   test:
     runs-on: ubuntu-latest
